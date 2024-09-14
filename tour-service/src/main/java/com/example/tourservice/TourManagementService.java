@@ -1,11 +1,14 @@
 package com.example.tourservice;
 
 import com.example.tourservice.utilities.TourRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TourManagementService {
-    private TourRepository tourRepository;
+    private final TourRepository tourRepository;
 
-    
+    @Autowired
     public TourManagementService(TourRepository tourRepository) {
         this.tourRepository = tourRepository;
         createTour("Big Sur Retreat", 750, true);
